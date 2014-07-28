@@ -2,14 +2,16 @@
 #Filename:t_second_resource_download.py
 import os
 
-rootDir = '/home/hadoop/mobodata/t_second_resource_download/nginx_day=20140716';
+rootDir = '/home/hadoop/mobodata/t_second_resource_download';
 #rootDir = 'E:\cy-bigdata-project\mobodata\data';
-outputFile = file('output/t_second_resource_download.txt','w');
+outputFile = file('/home/hadoop/mobodata/output/t_second_resource_download.txt','w');
 
 list_dirs = os.walk(rootDir)
 for root, dirs, files in list_dirs:
     for f in files:
-        inputFile = file(os.path.join(root, f),'r');
+	fname = os.path.join(root, f)
+	print fname
+        inputFile = file(fname,'r');
         while True:
             line = inputFile.readline();
             if len(line) == 0:
