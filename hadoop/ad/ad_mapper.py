@@ -1,7 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 import sys
 
-for line in sys.stdin:
-    line = line.strip()
-    if line.find('adActivityCallBack')>0:
-        print '%s' % (line)
+for l in sys.stdin:
+    try:
+        line = l.strip()
+        if len(line) > 0:
+            if line.find('adActivityCallBack')>0:
+                print line
+                #print line[-33:-1]
+    except Exception,ex:
+        pass
+        
+    

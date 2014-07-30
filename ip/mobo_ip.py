@@ -16,6 +16,7 @@ for root,dirs,files in list_dirs:
             if not line : break
             linestr = line.split('\t')
             outputFile.write(linestr[15])
+            outputFile.write(',')
             outputFile.write(linestr[14])
             outputFile.write('\n')
 
